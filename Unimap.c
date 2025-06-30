@@ -13,13 +13,13 @@ int main() {
     printf("\n                           ############################################");
 
 
-// Define constants for the university map
+
 #define LIBRARY_LOCATION "B3"
 #define COMMON_ROOM_LOCATION "B2"
 #define CANTEEN_LOCATION "B4"
 #define CSE_CLASS_LOCATION "B1"
 
-// Function to find the location of a given room
+
 char* find_location(char* room) {
     if (strcmp(room, "library") == 0) {
         return LIBRARY_LOCATION;
@@ -37,28 +37,28 @@ char* find_location(char* room) {
     char current_location[3];
     char destination[20];
 
-    // Ask the user for their current location
+   
     printf("\n\n                                   PLEASE ENTER YOUR LOCATION");
 
     printf("\n\nWhat is your current location :  ");
     scanf("%s", current_location);
 
-    // Ask the user where they want to go
+ 
     printf("Where do you want to go? ");
     scanf("%s", destination);
 
-    // Loop until the destination is reached
+    
     while (strcmp(current_location, find_location(destination)) != 0) {
-        // Print the current location and ask for the next destination
+       
         printf("You are currently in %s. ", current_location);
 
 
 
-        // Update the current location based on the destination
+   
         strcpy(current_location, find_location(destination));
     }
 
-    // Print the final destination
+    
     printf("You have reached %s.\n", current_location);
 
 
